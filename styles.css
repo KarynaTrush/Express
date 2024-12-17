@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Dancing Script', 'League Script', sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+}
+
+.overlay {
+    background-image: url('Images/fone1.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+.overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.content {
+    text-align: center;
+    position: relative;
+    z-index: 2; 
+    padding: 20px;
+}
+/* Контейнер для логотипа */
+.logo-container {
+    position: absolute;
+    top: 20px; /* Отступ сверху */
+    left: 20px; /* Отступ слева */
+    z-index: 10; /* Поверх других элементов */
+}
+
+/* Стиль для логотипа */
+.site-logo {
+    width: 80px; /* Размер логотипа */
+    height: auto;
+    filter: brightness(0.9) contrast(1.2) saturate(1.3); /* Фильтры для улучшения */
+    opacity: 0.85; /* Лёгкая прозрачность */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Анимация */
+}
+
+.site-logo:hover {
+    transform: scale(1.1); /* Легкое увеличение при наведении */
+    opacity: 1; /* Полная видимость */
+}
+
+.headline {
+    font-size: 80px;
+    font-family: 'Lobster', cursive;
+    color: #362f32;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: -80px;
+}
+
+.login-icon {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 20px;
+    color: #333;
+    background-color: rgba(243, 235, 236, 0.8);
+    padding: 15px 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.login-icon a {
+    text-decoration: none;
+    color: #333;
+    font-size: inherit;
+}
+
+.login-icon:hover {
+    background-color: rgba(193, 187, 188, 0.9);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #777;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+.modal-content form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content form button {
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.modal-content form button:hover {
+    background-color: #777;
+}
+
+.logout-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.welcome-text {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button {
+    background-color: rgba(243, 235, 236, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 15px 30px;
+    color: #333;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background-color: rgba(193, 187, 188, 0.9);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+#page-content {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.controls {
+    position: absolute;
+    top: 30px; /* Отступ сверху */
+    right: 170px; /* Переносим в правый угол */
+    z-index: 10;
+}
+
+/* Стили для кнопки */
+.toggle-button {
+    background-color: rgba(243, 235, 236, 0.8); /* Светлый фон */
+    border: none;
+    border-radius: 50%; /* Круглая форма кнопки */
+    width: 60px; /* Размер кнопки */
+    height: 60px; /* Размер кнопки */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-family: 'Dancing Script', 'League Script', sans-serif; /* Применение шрифта */
+    font-size: 1rem; /* Размер текста */
+}
+
+/* Стиль текста внутри кнопки */
+.theme-text {
+    font-family: 'Dancing Script', 'League Script', sans-serif; /* Применение шрифта */
+    color: #f0f0f0; /* Цвет текста */
+}
+
+/* Ховер для кнопки */
+.toggle-button:hover {
+    background-color: rgba(193, 187, 188, 0.9); /* Чуть темнее фон */
+    transform: scale(1.15);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: #080608;
+    text-decoration: none;
+}
+
+body {
+    cursor: url('https://cdn-icons-png.flaticon.com/512/60/60993.png') 16 16, auto;
+}
+
+@media (max-width: 1200px) {
+    .headline {
+        font-size: 60px;
+    }
+    .button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+    .login-icon {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .headline {
+        font-size: 45px;
+        margin-top: -60px;
+    }
+    .button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .login-icon {
+        padding: 8px 18px;
+        font-size: 16px;
+    }
+    .buttons {
+        flex-direction: row;
+        gap: 15px;
+        justify-content: center;
+    }
+    .controls {
+        gap: 5px;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .headline {
+        font-size: 35px;
+        margin-top: -40px;
+    }
+    .button, .login-icon {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    .buttons {
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px;
+    }
+    .controls {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}

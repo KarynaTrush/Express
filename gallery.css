@@ -1,0 +1,99 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'League Script', cursive, Arial, sans-serif;
+    color: #fff;
+    background: url('Images/fone1.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.gallery-header {
+    text-align: center;
+    margin: 20px 0;
+    color: #fff;
+}
+
+.gallery-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-header p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.slideshow-container {
+    width: 60%;
+    margin: auto;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: 0.3s;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+.controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+.controls .button {
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.controls .button:hover {
+    background-color: #777;
+}
