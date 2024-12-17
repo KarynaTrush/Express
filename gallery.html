@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="icon" href="Images/logo.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="controls">
+        <a href="index.html" class="button">Home</a>
+    </div>
+
+    <div class="gallery-header">
+        <h1>Gallery</h1>
+        <p>Explore the highlights of our dance ensemble.</p>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="Images/photo_2024-11-06 01.40.11.jpeg" alt="Gallery Image">
+        </div>
+        <div class="slide fade">
+            <img src="Images/rep1.jpeg" alt="Gallery Image">
+        </div>
+        <div class="slide fade">
+            <img src="Images/per3.jpeg" alt="Gallery Image">
+        </div>
+        <div class="slide fade">
+            <img src="Images/bac2.jpeg" alt="Gallery Image">
+        </div>
+        <div class="slide fade">
+            <img src="Images/rep2.jpeg" alt="Gallery Image">
+        </div>
+        <div class="slide fade">
+            <img src="Images/rep3.jpeg" alt="Gallery Image">
+        </div>
+        <div class="slide fade">
+            <img src="Images/photo_2024-11-06 01.40.21.jpeg" alt="Gallery Image">
+        </div>
+        <div class="slide fade">
+            <img src="Images/bac1.jpeg" alt="Gallery Image">
+        </div>
+        <div class="slide fade">
+            <img src="Images/per4.jpeg" alt="Gallery Image">
+        </div>
+        <div class="slide fade">
+            <img src="Images/per2.jpeg" alt="Gallery Image">
+        </div>
+
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" href="Images/logo.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portfolio.css"> 
+    <link id="theme-style" rel="stylesheet" href="home.dark-theme.css">
+    <script src="JS/home.js" defer></script>
+    <script src="JS/portfolio.js" defer></script> 
+</head>
+<body>
+
+    <div class="controls">
+        <a href="index.html" class="button">Home</a>
+    </div>
+
+    <div class="filter-controls">
+        <button onclick="filterSelection('all')" class="filter-button active">All</button>
+        <button onclick="filterSelection('performances')" class="filter-button">Performances</button>
+        <button onclick="filterSelection('backstage')" class="filter-button">Backstage</button>
+        <button onclick="filterSelection('rehearsals')" class="filter-button">Rehearsals</button>
+    </div>
+
+    <div class="overlay overlay-portfolio">
+        <div class="content portfolio-content">
+            <h1 class="headline">Our Portfolio</h1>
+            <p>Welcome to our portfolio! Here you will find the best moments and achievements of our ensemble.</p>
+
+            <div class="portfolio-gallery">
+
+                <div class="photo-box performances" onclick="openModal('Images/per1.jpeg')">
+                    <img src="Images/per1.jpeg" alt="Performance">
+                    <div class="photo-description">Performance</div>
+                </div>
+                <div class="photo-box performances" onclick="openModal('Images/per2.jpeg')">
+                    <img src="Images/per2.jpeg" alt="Performance">
+                    <div class="photo-description">Performance</div>
+                </div>
+                <div class="photo-box performances" onclick="openModal('Images/per3.jpeg')">
+                    <img src="Images/per3.jpeg" alt="Performance">
+                    <div class="photo-description">Performance</div>
+                </div>
+                <div class="photo-box performances" onclick="openModal('Images/per4.jpeg')">
+                    <img src="Images/per4.jpeg" alt="Performance">
+                    <div class="photo-description">Performance</div>
+                </div>
+
+                <div class="photo-box backstage" onclick="openModal('Images/bac1.jpeg')">
+                    <img src="Images/bac1.jpeg" alt="Backstage">
+                    <div class="photo-description">Backstage</div>
+                </div>
+                <div class="photo-box backstage" onclick="openModal('Images/bac2.jpeg')">
+                    <img src="Images/bac2.jpeg" alt="Backstage">
+                    <div class="photo-description">Backstage</div>
+                </div>
+
+                <div class="photo-box rehearsals" onclick="openModal('Images/rep1.jpeg')">
+                    <img src="Images/rep1.jpeg" alt="Rehearsal">
+                    <div class="photo-description">Rehearsal</div>
+                </div>
+                <div class="photo-box rehearsals" onclick="openModal('Images/rep2.jpeg')">
+                    <img src="Images/rep2.jpeg" alt="Rehearsal">
+                    <div class="photo-description">Rehearsal</div>
+                </div>
+                <div class="photo-box rehearsals" onclick="openModal('Images/rep3.jpeg')">
+                    <img src="Images/rep3.jpeg" alt="Rehearsal">
+                    <div class="photo-description">Rehearsal</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="lightbox-content" id="modalImage">
+    </div>
+
+</body>
+</html>

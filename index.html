@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dance Ensemble "Express"</title>
+    
+    <!-- Fonts and Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=League+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Images/logo.jpeg" type="image/jpeg">
+    <link id="theme-style" rel="stylesheet" href="home.dark-theme.css">
+
+    <!-- JavaScript -->
+    <script src="JS/home.js" defer></script>
+    <script src="JS/email-validation.js" defer></script>
+    <script src="JS/ajax-loader.js" defer></script>
+</head>
+<body>
+    <!-- Логотип -->
+    <div class="logo-container">
+        <img src="Images/logo.jpeg" alt="Logo" class="site-logo">
+    </div>
+
+    <!-- Кнопка Login -->
+    <div class="login-icon">
+        <a href="#">
+            <i class="fas fa-user-circle"></i> Login
+        </a>
+    </div>
+
+    <div class="controls">
+        <button class="toggle-button" onclick="switchTheme()">
+            <span class="theme-text">Theme</span>
+        </button>
+    </div>
+    
+    
+    <!-- Модальное окно -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <button type="submit" class="button">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="overlay">
+        <div class="content" id="content">
+            <h1 class="headline">Dance Ensemble "Express"</h1>
+            <div class="buttons">
+                <a href="schedule.html" class="button">Schedule</a> 
+                <a href="gallery.html" class="button">Gallery</a>
+                <a href="contact.html" class="button">Contact</a>
+                <a href="about-us.html" class="button">About Us</a>
+                <a href="portfolio.html" class="button">Portfolio</a>
+                <a href="dance-styles.html" class="button">Dance Styles</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-content"></div>
+</body>
+</html>
